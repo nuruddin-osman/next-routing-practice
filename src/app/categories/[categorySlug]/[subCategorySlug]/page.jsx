@@ -1,6 +1,13 @@
+"use client";
+
+import Link from "next/link";
+import { useParams } from "next/navigation";
+
 // app/categories/[categorySlug]/[subCategorySlug]/page.js
-export default function SubCategoryPage({ params }) {
+export default function SubCategoryPage() {
+  const params = useParams();
   const { categorySlug, subCategorySlug } = params;
+  const fullPath = `/categories/${categorySlug}/${subCategorySlug}/tablet`;
 
   return (
     <div className="container mx-auto p-4">
@@ -10,6 +17,7 @@ export default function SubCategoryPage({ params }) {
       <p className="text-lg">
         Products under this sub-category will be listed here.
       </p>
+      <Link href={fullPath}>Tablet</Link>
     </div>
   );
 }

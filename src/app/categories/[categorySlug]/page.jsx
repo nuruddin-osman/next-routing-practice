@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 // app/categories/[categorySlug]/page.js
 export default function CategoryPage({ params }) {
   const { categorySlug } = params;
@@ -8,6 +10,7 @@ export default function CategoryPage({ params }) {
       <p className="text-lg">
         Products under this category will be listed here.
       </p>
+      <Link href={`/categories/${categorySlug}/subCategorySlug`}>hello</Link>
     </div>
   );
 }
